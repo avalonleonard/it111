@@ -1,5 +1,7 @@
-import javax.swing. *;
+import javax.swing.*;
+import javax.swing.text.StyledEditorKit;
 import java.awt.*;
+
 public class ShowWindow2 extends JFrame {
     JPanel panel;
 
@@ -11,27 +13,33 @@ public class ShowWindow2 extends JFrame {
 
 
     public static void main(String[] args) {
+       new ShowWindow2();
 
+    }
+    public  ShowWindow2(){
         final int WINDOW_WIDTH = 375;
         final int WINDOW_HEIGHT = 550;
 
-        JFrame window = new JFrame();
-        window.setTitle("A Simple Window");
-        window.setSize(WINDOW_WIDTH, WINDOW_HEIGHT);
-        window.getContentPane().setBackground(Color.RED);
+        setTitle("A Simple Window");
+        setSize(WINDOW_WIDTH, WINDOW_HEIGHT);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setLocation(260,100);
+
         buildPanel();
 
         add(panel);
 
-        window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        window.setVisible(true);
+        setVisible(true);
+
 
 
     }
 
     public void buildPanel(){
-        messageLabel = new JLabel("Enter a distance in kilometers");
+        messageLabel = new JLabel("My First Label");
+        messageLabel.setFont(new Font("Arial", Font.PLAIN, 40));
         labelMessage = new JLabel("Another text field");
+        labelMessage.setFont(new Font("Arial", Font.BOLD, 30));
 
         textField = new JTextField(10);
         Fieldtext = new JTextField(10);
@@ -39,7 +47,9 @@ public class ShowWindow2 extends JFrame {
 
         panel.add(messageLabel);
         panel.add(textField);
+        panel.add(labelMessage);
         panel.add(Fieldtext);
+        panel.setBackground(Color.RED);
 
     }
 
